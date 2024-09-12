@@ -1,10 +1,21 @@
 body{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(45deg, black, transparent);
 }
 
 h1{
     font-size: 61px;
+    color: red;
+    text-decoration: underline;
+    font-family: fantasy;
+}
+h2{
+    font-size: 35px;
+    color: red;
+    text-decoration: underline;
+    font-family: fantasy;
+    margin-bottom: 50px;
 }
 
 /* Botões */

@@ -29,11 +29,9 @@ for (let i = 0; i < boxes.length; i++) {
 
         if(secondPlayer == 'ia-player'){
 
-            computerPlay();
-            player2++;
-
+          computerPlay();
+          player2++;
         }
-
       } else {
         player2++;
       }
@@ -45,24 +43,24 @@ for (let i = 0; i < boxes.length; i++) {
 
 }
 
-for(let i = 0; i < buttons.length; i++){
+// for(let i = 0; i < buttons.length; i++){
 
-  buttons[i].addEventListener("click", function() {
+//   buttons[i].addEventListener("click", function() {
         
-    secondPlayer = this.getAttribute("id");
+//     secondPlayer = this.getAttribute("id");
 
-    for(let j = 0; j < buttons.length; j++){
-      buttons[j].style.display = 'none';
-    }
+//     for(let j = 0; j < buttons.length; j++){
+//       buttons[j].style.display = 'none';
+//     }
 
-      setTimeout(function(){
-        let container = document.querySelector("#container");
-        container.classList.remove("hide");
-        }, 500);
+//       setTimeout(function(){
+//         let container = document.querySelector("#container");
+//         container.classList.remove("hide");
+//         }, 500);
 
-    });
+//     });
 
-}
+// }
 
 function checkEl(player1, player2) {
   if (player1 == player2) {
@@ -101,6 +99,7 @@ if (b1.childNodes.length > 0 && b2.childNodes.length > 0 && b3.childNodes.length
   } else if (b1Child == "o" && b2Child == "o" && b3Child == "o") {
     declareWinner('o');
   }
+  
 }
 
 if (
@@ -117,6 +116,7 @@ if (
   } else if (b4Child == "o" && b5Child == "o" && b6Child == "o") {
     declareWinner('o');
   }
+
 }
 
 if (
@@ -133,6 +133,7 @@ if (
   } else if (b7Child == "o" && b8Child == "o" && b9Child == "o") {
     declareWinner('o');
   }
+
 }
 
 // Vertical
@@ -150,7 +151,9 @@ if (
   } else if (b1Child == "o" && b4Child == "o" && b7Child == "o") {
     declareWinner('o');
   }
+
 }
+
 if (
   b2.childNodes.length > 0 &&
   b5.childNodes.length > 0 &&
@@ -165,7 +168,9 @@ if (
   } else if (b2Child == "o" && b5Child == "o" && b8Child == "o") {
     declareWinner('o');
   }
+
 }
+
 if (
   b3.childNodes.length > 0 &&
   b6.childNodes.length > 0 &&
@@ -181,6 +186,7 @@ if (
   } else if (b3Child == "o" && b6Child == "o" && b9Child == "o") {
     declareWinner('o');
   }
+
 }
 
 // Diagonal
@@ -199,7 +205,9 @@ if (
     declareWinner('o');
   
   }
+
 }
+
 if (
   b3.childNodes.length > 0 &&
   b5.childNodes.length > 0 &&
@@ -214,22 +222,25 @@ if (
   } else if (b3Child == "o" && b5Child == "o" && b7Child == "o") {
     declareWinner('o');
   }
+
 }
-}
+
 // Deu velha
 
 let counter = 0;
 
 for(let i = 0; i < boxes.length; i++) {
+
   if(boxes[i].childNodes[0] != undefined) {
     counter++;
   }
-  
-if(counter == 9){
-  declareWinner('Empate!');
-  }
 }
+  if(counter == 9){
+    declareWinner('Empate!');
+  }
 
+}
+ 
 // Declarar Placar
 function declareWinner(winner){
 
@@ -243,7 +254,7 @@ function declareWinner(winner){
     } else if(winner == 'o'){
       scoreboardY.textContent = parseInt(scoreboardY.textContent) + 1;
       msg = "O jogador 2 venceu";
-    }else{
+    } else {
       msg = "Empate!";
     }
  
@@ -267,6 +278,26 @@ function declareWinner(winner){
     for(let i = 0; i < boxesToRemove.length; i++) {
       boxesToRemove[i].parentNode.removeChild(boxesToRemove[i]);
     }
+
+}
+
+for(let i = 0; i < buttons.length; i++){
+
+  buttons[i].addEventListener("click", function() {
+        
+    secondPlayer = this.getAttribute("id");
+
+    for(let j = 0; j < buttons.length; j++){
+      buttons[j].style.display = 'none';
+    }
+
+    setTimeout(function(){
+      let container = document.querySelector("#container");
+      container.classList.remove("hide");
+    }, 500);
+
+  });
+
 }
 
 function computerPlay(){
