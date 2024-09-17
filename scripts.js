@@ -6,12 +6,9 @@ let messageContainer = document.querySelector("#message");
 let messageText = document.querySelector("#message p");
 let secondPlayer;
 
-// Contador de jogadas
-
 let player1 = 0;
 let player2 = 0;
 
-// Eventos
 
 for (let i = 0; i < boxes.length; i++) {
 
@@ -43,25 +40,6 @@ for (let i = 0; i < boxes.length; i++) {
 
 }
 
-// for(let i = 0; i < buttons.length; i++){
-
-//   buttons[i].addEventListener("click", function() {
-        
-//     secondPlayer = this.getAttribute("id");
-
-//     for(let j = 0; j < buttons.length; j++){
-//       buttons[j].style.display = 'none';
-//     }
-
-//       setTimeout(function(){
-//         let container = document.querySelector("#container");
-//         container.classList.remove("hide");
-//         }, 500);
-
-//     });
-
-// }
-
 function checkEl(player1, player2) {
   if (player1 == player2) {
     el = x;
@@ -71,8 +49,6 @@ function checkEl(player1, player2) {
 
   return el;
 }
-
-// Checar quem ganhou
 
 function checkWinCondition() {
 
@@ -86,8 +62,6 @@ function checkWinCondition() {
   let b8 = document.getElementById("block-8");
   let b9 = document.getElementById("block-9");
 
-
-// Horizontal
 
 if (b1.childNodes.length > 0 && b2.childNodes.length > 0 && b3.childNodes.length > 0) {
   let b1Child = b1.childNodes[0].className;
@@ -136,7 +110,6 @@ if (
 
 }
 
-// Vertical
 if (
   b1.childNodes.length > 0 &&
   b4.childNodes.length > 0 &&
@@ -225,8 +198,6 @@ if (
 
 }
 
-// Deu velha
-
 let counter = 0;
 
 for(let i = 0; i < boxes.length; i++) {
@@ -241,7 +212,6 @@ for(let i = 0; i < boxes.length; i++) {
 
 }
  
-// Declarar Placar
 function declareWinner(winner){
 
     let scoreboardX = document.querySelector("#scoreboard-1");
@@ -258,21 +228,18 @@ function declareWinner(winner){
       msg = "Empate!";
     }
  
-    // Exibir mensagem na tela
+   
     messageText.innerHTML = msg;
     messageContainer.classList.remove("hide");
     
     
-    // Esconde msg
     setTimeout(function(){
       messageContainer.classList.add("hide");
     }, 3000);
 
-    // Zerar
     player1 = 0; 
     player2 = 0; 
 
-    // remove x e o
     let boxesToRemove = document.querySelectorAll(".box div");
 
     for(let i = 0; i < boxesToRemove.length; i++) {

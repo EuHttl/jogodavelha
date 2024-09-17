@@ -18,15 +18,11 @@ h2{
     margin-bottom: 50px;
 }
 
-/* Botões */
-
 #buttons-container button{
     border: none;
     padding: 10px 15px;
     margin: 0 10px;
 }
-
-/* Jogo */
 
 #container{
     display: flex;
@@ -66,8 +62,6 @@ h2{
     border-top: none;
 }
 
-/* Símbolos */
-
 .x {
     font-size: 65px;
     color: red;
@@ -84,13 +78,9 @@ h2{
     margin-top: 17px;
 }
 
-/* Hide */
- 
 .hide{
     display: none !important;
 } 
-
-/* Placar */
 
 #scoreboard-container{
     font-weight: bold;
@@ -118,8 +108,6 @@ h2{
     border-radius: 50%;
     margin-right: 3px;
 }
-
-/* Mensagem de Vitória */
 
 #message p{
     position: absolute;
